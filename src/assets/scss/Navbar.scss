@@ -1,0 +1,63 @@
+@import "./variables";
+@import "colors";
+@import "mixins";
+a{
+	text-decoration: none;
+	margin-top: 6px;
+}
+header {
+	position: fixed;
+	right: 30px;
+	z-index: 3;
+	display: flex;
+	align-items: center;
+	top: 50%;
+	opacity: 1;
+	transition: opacity 0.3s;
+	-webkit-transition: opacity 0.3s;
+	transform: translateY(-50%);
+	z-index: 10;
+}
+ul.icon_menu {
+	margin: 0;
+	padding: 0;
+	li.icon_box {
+		width: 50px;
+		height: 50px;
+		list-style: none;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: 0.3s;
+		margin: 20px 0;
+		border-radius: 50%;
+		background: #2b2a2a;
+		cursor: pointer;
+			&:hover{
+				background-color: $hedding_yellow;
+				transition: 0.3s;
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+			}
+			&:hover i>svg {
+				filter:drop-shadow(0px 0px 2px rgba(68, 67, 67, 0.8))
+			}
+				&:hover h2{
+				background-color: $hedding_yellow;
+				transition: 0.3s;
+				opacity: 1;
+				right: 60%;
+			
+			}
+		i {
+			display: block;
+			font-size: 2em;
+			color: $bs-light;
+		
+		}
+		h2{
+			@include menu_title();
+		}
+	}
+}

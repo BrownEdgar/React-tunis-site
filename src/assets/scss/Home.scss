@@ -1,0 +1,111 @@
+@import "./variables";
+@import "colors";
+@import "mixins";
+
+.home {
+	width: 100%;
+	min-height: 100vh;
+	position: relative;
+	display: flex;
+	justify-content: flex-start;
+
+	height: 500px;
+	.cube {
+		position: fixed;
+		height: 200%;
+		width: 100%;
+		transform: rotate(-15deg);
+		left: -83%;
+		top: -50%;
+		background-color: $cube_yellow;
+	}
+
+	.home_page_img {
+		flex: 0 0 35%;
+		position: relative;
+		height: calc(100vh - 80px);
+		z-index: 11;
+		border-radius: 30px;
+		left: 40px;
+		top: 40px;
+		box-shadow: 0 0 7px rgb(0 0 0 / 90%);
+		background-image: url(../img/dark.jpg);
+		//use mixin
+		@include bg_rools(cover, top);
+	}
+	.home_page_info {
+		flex: 0 0 50%;
+		height: 350px;
+		align-self: center;
+		margin: 0 auto 0 120px;
+		h1 {
+			font-size: 51px;
+			line-height: 62px;
+			font-weight: 700;
+			margin: 18px 0 10px auto;
+			position: relative;
+			padding-left: 70px;
+
+			span {
+				color: #fff;
+			}
+		}
+		p {
+			margin: 15px 0 28px;
+			font-size: 1.6em;
+			line-height: 35px;
+			color: $text_color_dark;
+			width: 90%;
+			font-weight: 300;
+		}
+		button {
+			overflow: hidden;
+			display: inline-block;
+			line-height: 1.4;
+			border-radius: 35px;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			text-align: center;
+			cursor: pointer;
+			vertical-align: middle;
+			user-select: none;
+			transition: all 0.25s ease-in-out;
+			text-transform: uppercase;
+			text-decoration: none !important;
+			position: relative;
+			z-index: 1;
+			padding: 16px 70px 16px 35px;
+			font-size: 15px;
+			font-weight: 700;
+			color: #fff;
+			border: none;
+			border: 1px solid $hedding_yellow;
+			background-color: transparent;
+			outline: none !important;
+			cursor: pointer !important;
+			&:before{
+				@include btn_before();
+			}
+				&:hover:before{
+				 transform: translateX(0%);
+			}
+			  
+			span.button-icon {
+				position: absolute;
+				right: -1px;
+				top: -1px;
+				bottom: 0;
+				width: 55px;
+				height: 55px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 30px;
+				color: #fff;
+				background-color: $hedding_yellow;
+				border-radius: 50%;
+				
+			}
+		}
+	}
+}

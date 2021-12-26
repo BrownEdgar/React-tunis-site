@@ -1,0 +1,23 @@
+@import "./variables";
+@import "colors";
+@import "mixins";
+
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: $main_font_size;
+}
+body {
+	background-color: $bg_color_dark;
+	font-family: $main_font;
+}
+h1 {
+	color: $hedding_yellow;
+	text-transform: uppercase;
+	font-size: 2.3em;
+	&:before {
+		@include title_before();
+	}
+}
